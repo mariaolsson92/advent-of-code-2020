@@ -19,6 +19,10 @@ void EntryFinder::findThreeEntries(std::vector<int>& vect) {
 
 	for (auto firstEntry : vect) {
 		for (auto secondEntry : vect) {
+			if (firstEntry + secondEntry >= GOAL_NUMBER) {
+				continue;
+			}
+
 			if (std::binary_search(sortedVec.begin(), sortedVec.end(), getDiff(firstEntry + secondEntry))) {
 				std::vector<int> entries{ firstEntry, secondEntry, getDiff(firstEntry + secondEntry) };
 				printEntries(entries);
