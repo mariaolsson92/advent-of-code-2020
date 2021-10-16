@@ -1,12 +1,15 @@
 #include "FileReader.h"
 
-
-void FileReader::readFile(std::string fileName, std::vector<int>& vec) {
-    std::ifstream read_file(fileName);
-    assert(read_file.is_open());
-
-    std::copy(std::istream_iterator<int>(read_file), std::istream_iterator<int>(),
-        std::back_inserter(vec));
-
-    read_file.close();
+void FileReader::readFile(std::string fileName, std::vector<std::string>& vec) {
+    
+    std::ifstream in(fileName.c_str());
+    
+    if (in) {
+        std::string str;
+        while (std::getline(in, str)) {
+            if (str.size() > 0)
+                vec.push_back(str);
+        }
+    }
+    in.close();
 }

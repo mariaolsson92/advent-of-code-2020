@@ -1,6 +1,10 @@
-#include <iostream>
+#pragma once
+#include "FileReader.h"
+#include "PolicyController.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    std::vector<std::string> vec;
+    FileReader::readFile("data/input.txt", vec);
+    PolicyController::checkPasswords(vec);
 }
