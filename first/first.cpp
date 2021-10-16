@@ -5,6 +5,7 @@
 int main() {
     std::string fileName = "data/first.txt";
     std::vector<int> vec;
+
     FileReader::readFile(fileName, vec);
-    EntryFinder::findEntries(vec);
+    EntryFinder::findTwoEntries(vec);
 }

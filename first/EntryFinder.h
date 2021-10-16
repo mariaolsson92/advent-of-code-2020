@@ -5,10 +5,13 @@
 
 class EntryFinder {
 	public: 
-		static void findEntries(std::vector<int>& vect);
+		static void findTwoEntries(std::vector<int>& vect);
 
 	private:
+		static const int GOAL_NUMBER = 2020;
+
 		static int getDiff(int entry);
-		static void printEntries(int entryOne, int entryTwo);
+		static void printEntries(std::vector<int> entries);
+		static std::vector<std::tuple<int, int, int>> findCombinations();
 };
 
