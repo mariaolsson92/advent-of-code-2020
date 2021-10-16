@@ -1,6 +1,5 @@
 #include "EntryFinder.h"
 
-//Original solution
 void EntryFinder::findTwoEntries(std::vector<int>& vect) {
 	auto sortedVec = vect;
 	std::sort(sortedVec.begin(), sortedVec.end());
@@ -10,6 +9,21 @@ void EntryFinder::findTwoEntries(std::vector<int>& vect) {
 			std::vector<int> entries{ entry, getDiff(entry) };
 			printEntries(entries);
 			break;
+		}
+	}
+}
+
+void EntryFinder::findThreeEntries(std::vector<int>& vect) {
+	auto sortedVec = vect;
+	std::sort(sortedVec.begin(), sortedVec.end());
+
+	for (auto firstEntry : vect) {
+		for (auto secondEntry : vect) {
+			if (std::binary_search(sortedVec.begin(), sortedVec.end(), getDiff(firstEntry + secondEntry))) {
+				std::vector<int> entries{ firstEntry, secondEntry, getDiff(firstEntry + secondEntry) };
+				printEntries(entries);
+				return;
+			}
 		}
 	}
 }
@@ -26,5 +40,5 @@ void EntryFinder::printEntries(std::vector<int> entries) {
 		product *= entries[i];
 	}
 	
-	std::cout << "Multiplied: " << product;
+	std::cout << "Multiplied: " << product << std::endl;
 }

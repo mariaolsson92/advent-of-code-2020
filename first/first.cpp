@@ -8,4 +8,5 @@ int main() {
 
     FileReader::readFile(fileName, vec);
     EntryFinder::findTwoEntries(vec);
+    EntryFinder::findThreeEntries(vec);
 }
