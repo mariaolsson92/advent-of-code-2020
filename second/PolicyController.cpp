@@ -20,7 +20,6 @@ void PolicyController::checkSecondPolicy(std::vector<std::string>& vec) {
 
 	for (auto v : vec) {
 		auto line = getLine(v);
-
 		bool firstPos = line.password[line.min] == line.letter;
 		bool secondPos = line.password[line.max] == line.letter;
 
