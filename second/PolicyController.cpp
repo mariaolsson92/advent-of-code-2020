@@ -1,6 +1,6 @@
 #include "PolicyController.h"
 
-void PolicyController::checkPasswords(std::vector<std::string>& vec) {
+void PolicyController::checkFirstPolicy(std::vector<std::string>& vec) {
 	int nrOfValidPasswords = 0;
 	
 	for (auto v : vec) {
@@ -12,7 +12,24 @@ void PolicyController::checkPasswords(std::vector<std::string>& vec) {
 		}
 	}
 
-	std::cout << "Nr of valid passwords: " << nrOfValidPasswords;
+	std::cout << "Nr of valid passwords: " << nrOfValidPasswords << std::endl;
+}
+
+void PolicyController::checkSecondPolicy(std::vector<std::string>& vec) {
+	int nrOfValidPasswords = 0;
+
+	for (auto v : vec) {
+		auto line = getLine(v);
+
+		bool firstPos = line.password[line.min] == line.letter;
+		bool secondPos = line.password[line.max] == line.letter;
+
+		if (firstPos != secondPos) {
+			nrOfValidPasswords++;
+		}
+	}
+
+	std::cout << "Nr of valid passwords: " << nrOfValidPasswords << std::endl;
 }
 
 PolicyController::Line PolicyController::getLine(std::string lineContent) {

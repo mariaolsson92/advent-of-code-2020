@@ -6,5 +6,6 @@ int main()
 {
     std::vector<std::string> vec;
     FileReader::readFile("data/input.txt", vec);
-    PolicyController::checkPasswords(vec);
+    PolicyController::checkFirstPolicy(vec);
+    PolicyController::checkSecondPolicy(vec);
 }

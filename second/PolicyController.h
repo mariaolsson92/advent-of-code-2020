@@ -16,7 +16,8 @@ class PolicyController {
 	};
 
 	public: 
-		static void checkPasswords(std::vector<std::string> &vec);
+		static void checkFirstPolicy(std::vector<std::string> &vec);
+		static void checkSecondPolicy(std::vector<std::string>& vec);
 
 	private:
 		static Line getLine(std::string lineContent);
