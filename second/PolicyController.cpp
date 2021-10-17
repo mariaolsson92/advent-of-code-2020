@@ -24,6 +24,7 @@ void PolicyController::checkSecondPolicy(std::vector<std::string>& vec) {
 		bool firstPos = line.password[line.min] == line.letter;
 		bool secondPos = line.password[line.max] == line.letter;
 
+		//XOR
 		if (firstPos != secondPos) {
 			nrOfValidPasswords++;
 		}
