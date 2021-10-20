@@ -1,6 +1,6 @@
 #include "SlopeHandler.h"
 
-void SlopeHandler::countTrees(int deltaX, int deltaY, std::vector<std::vector<char>>& slopeMap) {
+int SlopeHandler::countTrees(int deltaX, int deltaY, std::vector<std::vector<char>>& slopeMap) {
 	bool goalReached = false;
 	int yCoord = 0;
 	int xCoord = 0;
@@ -23,13 +23,14 @@ void SlopeHandler::countTrees(int deltaX, int deltaY, std::vector<std::vector<ch
 			if (isTree(symbol)) {
 				treeCount++;
 			}
-		}
-		else {
+		} else {
 			goalReached = true;
 		}
 	}
 
 	printTreeCount(treeCount);
+	
+	return treeCount;
 }
 
 bool SlopeHandler::yCoordIsWithinBounds(int yCoord, int yBoundary) {

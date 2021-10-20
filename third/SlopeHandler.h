@@ -4,7 +4,7 @@
 
 class SlopeHandler {
 	public: 
-		static void countTrees(int deltaX, int deltaY, std::vector<std::vector<char>>& slopeMap);
+		static int countTrees(int deltaX, int deltaY, std::vector<std::vector<char>>& slopeMap);
 
 	private:
 		static const char TREE_SYMBOL = '#';
